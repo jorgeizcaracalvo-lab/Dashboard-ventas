@@ -5,10 +5,14 @@ st.set_page_config(page_title="Dashboard Ventas", layout="wide")
 
 st.title("Dashboard de Ventas")
 
-df = pd.read_csv("ventas_snapshot.csv")
+# Empresa A
+df_A = pd.read_excel("empresaA.xlsx", sheet_name="HojaA")
 
-st.subheader("Datos de ventas")
-st.dataframe(df)
+# Empresa B
+df_B = pd.read_excel("empresaB.xlsx", sheet_name="HojaB")
 
-st.subheader("Gráfico de ventas")
-st.bar_chart(df.set_index(df.columns[0]))
+st.subheader("Empresa A")
+st.dataframe(df_A)
+
+st.subheader("Empresa B")
+st.dataframe(df_B)
